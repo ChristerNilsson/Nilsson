@@ -8,6 +8,8 @@ Funktionalitet för att underlätta användandet av p5.
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
 
+| Nilsson        | Motsvarighet i p5           |
+| -------------- |--------------- | 
 | fc()           |         noFill() |
 | fc 1           |         fill 255 |
 | fc 1,1         |         fill 255,255 |
