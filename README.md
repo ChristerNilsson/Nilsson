@@ -1,6 +1,6 @@
 # Nilsson
 
-Funktionalitet för att underlätta användandet av p5.
+Funktionalitet för att underlätta användandet av p5..
 
 | Nilsson        | Motsvarighet i p5 |
 | -------------- |---------------    | 
