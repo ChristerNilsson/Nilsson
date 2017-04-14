@@ -2,8 +2,6 @@ nilsson_version = "1.1"
 
 assert = (a,b) -> print "Assert failed: #{a} != #{b}" if !_.isEqual(a,b)
 
-# 
-
 fixColor = (args) ->
 	n = args.length
 	a = 1
