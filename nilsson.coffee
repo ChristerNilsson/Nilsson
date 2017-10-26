@@ -1,6 +1,10 @@
-nilsson_version = "1.1"
+nilsson_version = "1.2"
 
-assert = (a,b) -> print "Assert failed: #{a} != #{b}" if !_.isEqual(a,b)
+assert = (a, b, msg='Assert failure') ->
+  try 
+    chai.assert.deepEqual a, b, msg
+  catch e
+    print '  ',e
 
 fixColor = (args) ->
 	n = args.length
