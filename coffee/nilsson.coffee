@@ -1,10 +1,8 @@
-nilsson_version = "1.3"
+nilsson_version = "1.4"
 
-assert = (a, b, msg='Assert failure') ->
-  try 
-    chai.assert.deepEqual a, b, msg
-  catch e
-    print '  ',e
+# chai visar listinnehåll på ett bra sätt. 
+# _.isEqual(a,b) fungerar också men det blir sämre listutskrifter
+assert = (a, b, msg='Assert failure') -> chai.assert.deepEqual a, b, msg
 
 fixColor = (args) ->
 	n = args.length
