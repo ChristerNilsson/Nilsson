@@ -1,4 +1,4 @@
-nilsson_version = "1.2"
+nilsson_version = "1.3"
 
 assert = (a, b, msg='Assert failure') ->
   try 
@@ -23,6 +23,7 @@ circle = (x,y,r) -> ellipse x,y,2*r,2*r
 rd = (degrees) -> rotate radians degrees
 print = console.log
 range = _.range # from underscore.coffee
+merp = (y1,y2,i,x1=0,x2=1) -> map i,x1,x2,y1,y2
 
 getParameters = (h = window.location.href) -> _.object(f.split '=' for f in h.split('?')[1].split('&'))
 assert getParameters('http:\\christernilsson.github.io\Shortcut\www?a=0&b=1'), {'a':'0', 'b':'1'}
