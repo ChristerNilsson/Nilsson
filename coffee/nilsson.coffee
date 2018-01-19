@@ -1,4 +1,4 @@
-nilsson_version = "1.4"
+nilsson_version = "1.5" # getParameters with 0 parameters fixed 
 
 # chai visar listinnehåll på ett bra sätt. 
 # _.isEqual(a,b) fungerar också men det blir sämre listutskrifter
@@ -23,7 +23,14 @@ print = console.log
 range = _.range # from underscore.coffee
 merp = (y1,y2,i,x1=0,x2=1) -> map i,x1,x2,y1,y2
 
-getParameters = (h = window.location.href) -> _.object(f.split '=' for f in h.split('?')[1].split('&'))
+getParameters = (h = window.location.href) -> 
+	arr = h.split('?')
+	if arr.length != 2 then return {}
+	s = arr[1]
+	if s=='' then return {}
+	_.object(f.split '=' for f in s.split('&'))
+assert getParameters('http:\\christernilsson.github.io\Shortcut\www'), {}
+assert getParameters('http:\\christernilsson.github.io\Shortcut\www?'), {}
 assert getParameters('http:\\christernilsson.github.io\Shortcut\www?a=0&b=1'), {'a':'0', 'b':'1'}
 
 compare = (a,b) ->
@@ -32,7 +39,7 @@ compare = (a,b) ->
 			c = compare a[i],b[i]
 			if c != 0 then return c
 	else
-		(if a > b then return -1 else (if a < b then return 1 else return 0))
+		return (if a > b then -1 else (if a < b then 1 else 0))
 	0
 assert compare(12,13), 1
 assert compare(12,12), 0
