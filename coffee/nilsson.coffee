@@ -24,6 +24,7 @@ range = _.range # from underscore.coffee
 merp = (y1,y2,i,x1=0,x2=1) -> map i,x1,x2,y1,y2
 
 getParameters = (h = window.location.href) -> 
+	h = decodeURI h
 	arr = h.split('?')
 	if arr.length != 2 then return {}
 	s = arr[1]
